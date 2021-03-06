@@ -21,6 +21,7 @@ public class Balloon : MonoBehaviour
 
     private bool isDestroyed = false;
     private bool earnPoints;
+    private bool createMoveableObject;
 
 
     private void Awake()
@@ -68,6 +69,7 @@ public class Balloon : MonoBehaviour
         minSpeed = _balloonsHandler.MinSpeed;
         maxSpeed = _balloonsHandler.MaxSpeed;
         earnPoints = _balloonsHandler.EarnPoints;
+        createMoveableObject = _balloonsHandler.CreateMoveableObject;
     }
 
     private void MoveUp()
@@ -101,11 +103,11 @@ public class Balloon : MonoBehaviour
     {
         if (_collider2D == Physics2D.OverlapPoint(position))
         {
-            DestroyGameObject(playParticle, playSound, earnPoint);
+            DestroyGameObject(playParticle, playSound, earnPoint, createMoveableObject);
         }
     }
 
-    private void DestroyGameObject(bool playParticle, bool playSound, bool earnPoint)
+    private void DestroyGameObject(bool playParticle, bool playSound, bool earnPoint, bool useMoveableObject)
     {
         if (!isDestroyed)
         {
@@ -131,6 +133,11 @@ public class Balloon : MonoBehaviour
                 _pointsHandler.IncreaseEarnedPointsCount();
             }
 
+            if(useMoveableObject)
+            {
+                Instantiate(_balloonsHandler.GetRandomMoveableObject(), _transform.position, Quaternion.identity, _balloonsHandler.transform);
+            }
+
             if(gameObject.activeSelf)
             {
                 StartCoroutine(WaitToDestroy());
@@ -147,6 +154,6 @@ public class Balloon : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        DestroyGameObject(false, false, false);
+        DestroyGameObject(false, false, false, false);
     }
 }

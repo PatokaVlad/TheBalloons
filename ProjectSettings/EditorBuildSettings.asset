@@ -9,6 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/GameScene.unity
+    path: Assets/Scenes/Simple.unity
     guid: 343e5224e35900040913b20ef551d1a4
+  - enabled: 1
+    path: Assets/Scenes/Animals.unity
+    guid: f6fc187236ea26045a1dc42b66100ab1
+  - enabled: 1
+    path: Assets/Scenes/Blot.unity
+    guid: 770b2ae0351a4074586377e4eb4a69d9
+  - enabled: 1
+    path: Assets/Scenes/Butterfly.unity
+    guid: 3428c286b82a663468e0b112009e927c
+  - enabled: 1
+    path: Assets/Scenes/Fishes.unity
+    guid: 52ad15c859795ab46a3115461a6c5bda
   m_configObjects: {}

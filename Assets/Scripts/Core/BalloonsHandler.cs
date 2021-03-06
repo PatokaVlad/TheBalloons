@@ -7,6 +7,9 @@ public class BalloonsHandler : MonoBehaviour
     [SerializeField]
     private List<GameObject> balloons = new List<GameObject>();
 
+    [SerializeField]
+    private List<GameObject> moveableObjects = new List<GameObject>();
+
     private SceneLoader _sceneLoader;
     private PointsHandler _pointsHandler;
 
@@ -27,15 +30,18 @@ public class BalloonsHandler : MonoBehaviour
     private bool useMouse;
     [SerializeField]
     private bool earnPoints;
+    [SerializeField]
+    private bool createMoveableObject;
     private bool spawn = true;
 
-    public delegate void OnQuit(bool playParticle, bool playSound, bool earnPoint);
+    public delegate void OnQuit(bool playParticle, bool playSound, bool earnPoint, bool useMoveableObject);
     public event OnQuit onQuit;
 
     public bool UseMouse { get => useMouse; }
     public float MinSpeed { get => minSpeed; }
     public float MaxSpeed { get => maxSpeed; }
     public bool EarnPoints { get => earnPoints; }
+    public bool CreateMoveableObject { get => createMoveableObject; }
 
     private void Awake()
     {;   
@@ -92,8 +98,13 @@ public class BalloonsHandler : MonoBehaviour
     {
         spawn = false;
         StopCoroutine(SpawnObjects());
-        onQuit(true, true, false);
+        onQuit(true, true, false, false);
         yield return new WaitForSeconds(1f);
         _sceneLoader.LoadLevelScene(0);
+    }
+
+    public GameObject GetRandomMoveableObject()
+    {
+        return moveableObjects[Random.Range(0, moveableObjects.Count)];
     }
 }
