@@ -6,25 +6,27 @@ using UnityEngine.UI;
 public class UIHandler : MonoBehaviour
 {
     [SerializeField]
-    private Text pointsCount;
-
+    private Text currentScore;
     [SerializeField]
-    private bool loadBest = false;
+    private Text bestScore;
 
     private void Start()
     {
-        if (loadBest)
-            LoadBestPoints();
+        bestScore.text = SaveHandler.GetBestScore().ToString();
     }
 
-    public void UpdatePoitsCount(string count)
+    public void UpdatePonitsCount(int count)
     {
-        pointsCount.text = count;
+        currentScore.text = count.ToString();
+
+        UpdateBestScore(count);
     }
 
-    public void LoadBestPoints()
+    private void UpdateBestScore(int count)
     {
-        if (ES3.KeyExists("Score"))
-            pointsCount.text = ES3.Load<int>("Score").ToString();
+        if(SaveHandler.GetBestScore() < count)
+        {
+            bestScore.text = count.ToString();
+        }
     }
 }

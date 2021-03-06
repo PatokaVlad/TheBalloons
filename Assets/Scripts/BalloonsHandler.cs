@@ -79,14 +79,9 @@ public class BalloonsHandler : MonoBehaviour
     {
         if(_pointsHandler != null)
         {
-            if (ES3.KeyExists("Score"))
+            if(EarnPoints)
             {
-                if (ES3.Load<int>("Score") < _pointsHandler.PointsEarned) 
-                    ES3.Save<int>("Score", _pointsHandler.PointsEarned);
-            }
-            else
-            {
-                ES3.Save<int>("Score", _pointsHandler.PointsEarned);
+                SaveHandler.SaveBestScore(_pointsHandler.PointsEarned);
             }
         }
 

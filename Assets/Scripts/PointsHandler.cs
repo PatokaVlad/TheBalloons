@@ -18,6 +18,6 @@ public class PointsHandler : MonoBehaviour
     public void IncreaseEarnedPointsCount()
     {
         pointsEarned++;
-        _uiHandler.UpdatePoitsCount(pointsEarned.ToString());
+        _uiHandler.UpdatePonitsCount(pointsEarned);
     }
 }
