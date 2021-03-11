@@ -157,16 +157,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   balloons:
-  - {fileID: 5585745069005306098, guid: 036a29ea864703048bbd192518d0854d, type: 3}
-  - {fileID: 7623556696891776305, guid: ee56fe6edc1ad9d4ca32831002e2ad05, type: 3}
-  - {fileID: 6509776885432697418, guid: 07d7ab21db231954d85ed86680da6671, type: 3}
+  - {fileID: 6509776885432697418, guid: c5211b5d6f5c83d4c9bdd9528d6163b7, type: 3}
+  - {fileID: 6509776885432697418, guid: f00bab2147aa55c49aaee47486eac35a, type: 3}
+  - {fileID: 6509776885432697418, guid: 96286664d8ce6fb4d95f699b2c310587, type: 3}
+  - {fileID: 6509776885432697418, guid: 90a78d0e5b0cf7a4da980c4f6c4ee5be, type: 3}
   moveableObjects:
-  - {fileID: 6975488464465415720, guid: e194329b48718844dba70cd9b5e42cf7, type: 3}
-  maxOneTimeSpawnCount: 4
-  minOneTimeSpawnCount: 3
+  - {fileID: 6975488464465415720, guid: 10f029f3a94c78f438145ab8cf5e4154, type: 3}
+  - {fileID: 6975488464465415720, guid: ee92a42fd871cbc43ab4e93f92caaf94, type: 3}
+  - {fileID: 6975488464465415720, guid: 0415b6508e310bb44b3c269c74bce879, type: 3}
+  maxOneTimeSpawnCount: 3
+  minOneTimeSpawnCount: 2
   spawnDeltaTime: 0.6
   minSpeed: 1
-  maxSpeed: 5
+  maxSpeed: 4.5
   useMouse: 0
   earnPoints: 1
   createMoveableObject: 1

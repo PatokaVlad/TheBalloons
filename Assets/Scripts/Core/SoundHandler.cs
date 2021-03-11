@@ -18,4 +18,15 @@ public class SoundHandler : MonoBehaviour
 
     public void PlayBalloonClip() => _audioSource.PlayOneShot(balloonClips[Random.Range(0, balloonClips.Count)]);
 
+    public void WaitAndPlayClip(AudioClip audio) => StartCoroutine(WaitToPlay(audio));
+
+    private IEnumerator WaitToPlay(AudioClip audio)
+    {
+        while (_audioSource.isPlaying)
+        {
+            yield return null;
+        }
+
+        PlayClip(audio);
+    }
 }

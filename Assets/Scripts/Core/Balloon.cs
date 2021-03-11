@@ -14,6 +14,8 @@ public class Balloon : MonoBehaviour
     private PointsHandler _pointsHandler;
     private SoundHandler _soundHandler;
 
+    private Color spriteColor;
+
     private float minSpeed;
     private float maxSpeed;
 
@@ -46,6 +48,9 @@ public class Balloon : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
         Initialize();
+
+        spriteColor = _particle.startColor;
+
         speed = Random.Range(minSpeed, maxSpeed);
     }
 
@@ -135,7 +140,12 @@ public class Balloon : MonoBehaviour
 
             if(useMoveableObject)
             {
-                Instantiate(_balloonsHandler.GetRandomMoveableObject(), _transform.position, Quaternion.identity, _balloonsHandler.transform);
+                GameObject moveableObject = Instantiate(_balloonsHandler.GetRandomMoveableObject(), _transform.position, Quaternion.identity, _balloonsHandler.transform);
+
+                if (moveableObject.CompareTag("Blot"))
+                {
+                    moveableObject.GetComponent<SpriteRenderer>().color = spriteColor;
+                }
             }
 
             if(gameObject.activeSelf)
