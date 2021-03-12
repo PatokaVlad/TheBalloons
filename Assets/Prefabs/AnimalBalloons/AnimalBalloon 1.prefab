@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae8658deeec74aa4f9498c1a5f5afae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hideMoveableObject: 0
 --- !u!60 &2572266555085102421
 PolygonCollider2D:
   m_ObjectHideFlags: 0

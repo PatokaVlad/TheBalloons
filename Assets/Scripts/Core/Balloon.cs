@@ -16,11 +16,16 @@ public class Balloon : MonoBehaviour
 
     private Color spriteColor;
 
+    private GameObject moveableObject;
+    private GameObject moveableObjectSprite;
+
     private float minSpeed;
     private float maxSpeed;
 
     private float speed;
 
+    [SerializeField]
+    private bool hideMoveableObject = true;
     private bool isDestroyed = false;
     private bool earnPoints;
     private bool createMoveableObject;
@@ -53,6 +58,29 @@ public class Balloon : MonoBehaviour
         GetComponent<ParticleSystemRenderer>().material.color = spriteColor;
 
         speed = Random.Range(minSpeed, maxSpeed);
+
+        moveableObject = _balloonsHandler.GetRandomMoveableObject();
+
+        if (!hideMoveableObject) 
+        {
+            CreateMoveableObjectSprite();
+        }
+    }
+
+    private void CreateMoveableObjectSprite()
+    {
+        GameObject moveableObjectCopy = Instantiate(moveableObject, _transform.position, Quaternion.identity, _transform);
+
+        moveableObjectCopy.GetComponent<MoveableObject>().enabled = false;
+
+        SpriteRenderer _sprite = moveableObjectCopy.GetComponent<SpriteRenderer>();
+        _sprite.sortingOrder = _spriteRenderer.sortingOrder + 1;
+
+        Color color = _sprite.color;
+        color.a = 0.4f;
+        _sprite.color = color;
+
+        moveableObjectSprite = moveableObjectCopy;
     }
 
     private void Update()
@@ -139,16 +167,16 @@ public class Balloon : MonoBehaviour
                 _pointsHandler.IncreaseEarnedPointsCount();
             }
 
-            if(useMoveableObject)
+            if (useMoveableObject) 
             {
-                GameObject moveableObject = Instantiate(_balloonsHandler.GetRandomMoveableObject(), _transform.position, Quaternion.identity, _balloonsHandler.transform);
+                GameObject currentMoveableObject = Instantiate(moveableObject, _transform.position, Quaternion.identity, _balloonsHandler.transform);
 
-                if (moveableObject.CompareTag("Blot"))
+                if (currentMoveableObject.CompareTag("Blot"))
                 {
-                    moveableObject.GetComponent<SpriteRenderer>().color = spriteColor;
+                    currentMoveableObject.GetComponent<SpriteRenderer>().color = spriteColor;
                 }
 
-                _balloonsHandler.childs.Add(moveableObject);
+                _balloonsHandler.childs.Add(currentMoveableObject);
             }
 
             if(gameObject.activeSelf)
@@ -160,6 +188,14 @@ public class Balloon : MonoBehaviour
 
     private IEnumerator WaitToDestroy()
     {
+        if (!hideMoveableObject)
+        {
+            if (moveableObjectSprite != null) 
+            {
+                Destroy(moveableObjectSprite);
+            }
+        }
+
         _spriteRenderer.enabled = false;
         yield return new WaitForSeconds(_particle.main.duration);
         Destroy(gameObject);

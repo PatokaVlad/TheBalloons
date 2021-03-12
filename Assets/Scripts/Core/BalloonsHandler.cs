@@ -10,6 +10,7 @@ public class BalloonsHandler : MonoBehaviour
     [SerializeField]
     private List<GameObject> moveableObjects = new List<GameObject>();
 
+    [HideInInspector]
     public List<GameObject> childs = new List<GameObject>();
 
     private SceneLoader _sceneLoader;
@@ -109,7 +110,11 @@ public class BalloonsHandler : MonoBehaviour
 
     public GameObject GetRandomMoveableObject()
     {
-        return moveableObjects[Random.Range(0, moveableObjects.Count)];
+        if (moveableObjects.Count != 0)
+        {
+            return moveableObjects[Random.Range(0, moveableObjects.Count)];
+        }
+        else return null;
     }
 
     public void DestroyChilds()
