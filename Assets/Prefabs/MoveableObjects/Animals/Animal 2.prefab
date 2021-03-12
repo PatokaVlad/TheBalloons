@@ -96,5 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - {fileID: 8300000, guid: 579f7a932d9eb544aaccd6f39d621502, type: 3}
-  minSpeed: 2
-  maxSpeed: 3
+  minSpeed: 1
+  maxSpeed: 4
+  playSoundOnSpawn: 1
+  timeToDestroy: 7

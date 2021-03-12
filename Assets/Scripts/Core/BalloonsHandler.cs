@@ -34,6 +34,8 @@ public class BalloonsHandler : MonoBehaviour
     private bool earnPoints;
     [SerializeField]
     private bool createMoveableObject;
+    [SerializeField]
+    private bool spawnMoveableObjectOnQuit;
     private bool spawn = true;
 
     public delegate void OnQuit(bool playParticle, bool playSound, bool earnPoint, bool useMoveableObject);
@@ -100,7 +102,7 @@ public class BalloonsHandler : MonoBehaviour
     {
         spawn = false;
         StopCoroutine(SpawnObjects());
-        onQuit(true, true, false, false);
+        onQuit(true, true, false, spawnMoveableObjectOnQuit);
         yield return new WaitForSeconds(1f);
         _sceneLoader.LoadLevelScene(0);
     }

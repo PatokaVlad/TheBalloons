@@ -28,14 +28,4 @@ public class Butterfly : MoveableObject
         moveVector += (Vector2)_transform.position;
         _transform.position = moveVector;
     }
-
-    private Vector2 RotateVector(Vector2 vector, float degrees)
-    {
-        float radians = Mathf.Deg2Rad * degrees;
-
-        float cos = Mathf.Cos(radians);
-        float sin = Mathf.Sin(radians);
-
-        return new Vector2(vector.x * cos - vector.y * sin, vector.x * sin + vector.y * cos);
-    }
 }

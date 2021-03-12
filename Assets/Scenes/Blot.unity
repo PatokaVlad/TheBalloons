@@ -182,6 +182,7 @@ MonoBehaviour:
   useMouse: 0
   earnPoints: 1
   createMoveableObject: 1
+  spawnMoveableObjectOnQuit: 1
 --- !u!4 &140683709
 Transform:
   m_ObjectHideFlags: 0
@@ -296,9 +297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   balloonClips:
-  - {fileID: 8300000, guid: 20c73d516798a2e4da65dfe704523553, type: 3}
-  - {fileID: 8300000, guid: 73fddedf030d8d44cb7401857939d65e, type: 3}
-  - {fileID: 8300000, guid: 2cdb105879e21bc429e735de0aa03f64, type: 3}
+  - {fileID: 8300000, guid: 77628b80d213125448c79a717bfea0d3, type: 3}
   bitTheBestClip: {fileID: 8300000, guid: dbbd27645bd537448a6da7d849aaecad, type: 3}
 --- !u!4 &280931886
 Transform:
@@ -855,12 +854,12 @@ PrefabInstance:
     - target: {fileID: 3901337680714069138, guid: 568a7dd8123135442942bcbf17db9c2f,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3901337680714069138, guid: 568a7dd8123135442942bcbf17db9c2f,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3901337680714069138, guid: 568a7dd8123135442942bcbf17db9c2f,
         type: 3}
@@ -875,7 +874,7 @@ PrefabInstance:
     - target: {fileID: 3901337680714069138, guid: 568a7dd8123135442942bcbf17db9c2f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -49.952484
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3901337680815979972, guid: 568a7dd8123135442942bcbf17db9c2f,
         type: 3}
@@ -1283,12 +1282,12 @@ PrefabInstance:
     - target: {fileID: 8048877290294341030, guid: c5b435fb1073a864ca9a3c6be03feee4,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8048877290294341030, guid: c5b435fb1073a864ca9a3c6be03feee4,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8048877290294341030, guid: c5b435fb1073a864ca9a3c6be03feee4,
         type: 3}
@@ -1303,7 +1302,7 @@ PrefabInstance:
     - target: {fileID: 8048877290294341030, guid: c5b435fb1073a864ca9a3c6be03feee4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8048877290915413251, guid: c5b435fb1073a864ca9a3c6be03feee4,
         type: 3}

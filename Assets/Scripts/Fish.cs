@@ -38,6 +38,8 @@ public class Fish : MoveableObject
     private void FlipSprite()
     {
         _spriteRenderer.flipX = !_spriteRenderer.flipX;
+
+        _soundHandler.PlayClip(sounds[Random.Range(0, sounds.Count)]);
     }
 
     private void TouchHandle()

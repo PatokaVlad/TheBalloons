@@ -95,8 +95,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942f3cdce8cab6541998e97ba7fa6f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: d9d1b7578abe4e045832c9860518729e, type: 3}
   minSpeed: 2
   maxSpeed: 3
+  playSoundOnSpawn: 0
 --- !u!60 &6681148780417034642
 PolygonCollider2D:
   m_ObjectHideFlags: 0
