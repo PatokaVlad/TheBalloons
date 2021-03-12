@@ -10,6 +10,8 @@ public class BalloonsHandler : MonoBehaviour
     [SerializeField]
     private List<GameObject> moveableObjects = new List<GameObject>();
 
+    public List<GameObject> childs = new List<GameObject>();
+
     private SceneLoader _sceneLoader;
     private PointsHandler _pointsHandler;
 
@@ -106,5 +108,16 @@ public class BalloonsHandler : MonoBehaviour
     public GameObject GetRandomMoveableObject()
     {
         return moveableObjects[Random.Range(0, moveableObjects.Count)];
+    }
+
+    public void DestroyChilds()
+    {
+        if (childs.Count != 0) 
+        {
+            foreach (GameObject child in childs) 
+            {
+                Destroy(child);
+            }
+        }
     }
 }

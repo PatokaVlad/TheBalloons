@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public static class SaveHandler
 {
@@ -9,16 +10,18 @@ public static class SaveHandler
 
     public static void SaveBestScore(int score)
     {
-        if (PlayerPrefs.HasKey(bestScoreKey))
+        string sceneName = bestScoreKey + SceneManager.GetActiveScene().path;
+
+        if (PlayerPrefs.HasKey(sceneName))
         {
-            if (PlayerPrefs.GetInt(bestScoreKey) < score)
+            if (PlayerPrefs.GetInt(sceneName) < score)
             {
-                PlayerPrefs.SetInt(bestScoreKey, score);
+                PlayerPrefs.SetInt(sceneName, score);
             }
         }
         else
         {
-            PlayerPrefs.SetInt(bestScoreKey, score);
+            PlayerPrefs.SetInt(sceneName, score);
         }
 
         SaveTotalScore(score);
@@ -36,11 +39,13 @@ public static class SaveHandler
         }
     }
 
-    public static int GetBestScore()
+    public static int GetBestScore(string name)
     {
-        if (PlayerPrefs.HasKey(bestScoreKey))
+        string sceneName = bestScoreKey + name;
+
+        if (PlayerPrefs.HasKey(sceneName))
         {
-            return PlayerPrefs.GetInt(bestScoreKey);
+            return PlayerPrefs.GetInt(sceneName);
         }
         else
         {

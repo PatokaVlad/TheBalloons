@@ -162,8 +162,8 @@ MonoBehaviour:
   - {fileID: 6509776885432697418, guid: 07d7ab21db231954d85ed86680da6671, type: 3}
   moveableObjects:
   - {fileID: 6975488464465415720, guid: f0536219d37358445b9fba1f9f002b4e, type: 3}
-  maxOneTimeSpawnCount: 4
-  minOneTimeSpawnCount: 3
+  maxOneTimeSpawnCount: 3
+  minOneTimeSpawnCount: 0
   spawnDeltaTime: 0.6
   minSpeed: 1
   maxSpeed: 5
@@ -287,6 +287,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 20c73d516798a2e4da65dfe704523553, type: 3}
   - {fileID: 8300000, guid: 73fddedf030d8d44cb7401857939d65e, type: 3}
   - {fileID: 8300000, guid: 2cdb105879e21bc429e735de0aa03f64, type: 3}
+  bitTheBestClip: {fileID: 8300000, guid: dbbd27645bd537448a6da7d849aaecad, type: 3}
 --- !u!4 &280931886
 Transform:
   m_ObjectHideFlags: 0
@@ -600,7 +601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScore: {fileID: 502010399}
-  bestScore: {fileID: 1038551301}
+  bestScoreText: {fileID: 1038551301}
 --- !u!4 &1407395314
 Transform:
   m_ObjectHideFlags: 0

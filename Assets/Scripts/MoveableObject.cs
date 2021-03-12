@@ -32,7 +32,7 @@ public abstract class MoveableObject : MonoBehaviour
 
         if (sounds.Count != 0)
         {
-            _soundHandler.WaitAndPlayClip(sounds[Random.Range(0, sounds.Count)]);
+            _soundHandler.PlayClip(sounds[Random.Range(0, sounds.Count)]);
         }
     }
 

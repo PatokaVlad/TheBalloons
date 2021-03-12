@@ -9,6 +9,11 @@ public class SoundHandler : MonoBehaviour
     [SerializeField]
     private List<AudioClip> balloonClips = new List<AudioClip>();
 
+    [SerializeField]
+    private AudioClip bitTheBestClip;
+
+    public AudioClip BitTheBestClip { get => bitTheBestClip; }
+
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();

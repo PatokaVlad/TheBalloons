@@ -50,6 +50,7 @@ public class Balloon : MonoBehaviour
         Initialize();
 
         spriteColor = _particle.startColor;
+        GetComponent<ParticleSystemRenderer>().material.color = spriteColor;
 
         speed = Random.Range(minSpeed, maxSpeed);
     }
@@ -146,6 +147,8 @@ public class Balloon : MonoBehaviour
                 {
                     moveableObject.GetComponent<SpriteRenderer>().color = spriteColor;
                 }
+
+                _balloonsHandler.childs.Add(moveableObject);
             }
 
             if(gameObject.activeSelf)

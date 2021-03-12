@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &25495138 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8048877290294341024, guid: c5b435fb1073a864ca9a3c6be03feee4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8048877289700910245}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &130227019 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3901337680815979972, guid: 568a7dd8123135442942bcbf17db9c2f,
@@ -161,11 +173,11 @@ MonoBehaviour:
   - {fileID: 7623556696891776305, guid: ee56fe6edc1ad9d4ca32831002e2ad05, type: 3}
   - {fileID: 6509776885432697418, guid: 07d7ab21db231954d85ed86680da6671, type: 3}
   moveableObjects: []
-  maxOneTimeSpawnCount: 4
-  minOneTimeSpawnCount: 3
+  maxOneTimeSpawnCount: 3
+  minOneTimeSpawnCount: 0
   spawnDeltaTime: 0.6
   minSpeed: 1
-  maxSpeed: 5
+  maxSpeed: 4
   useMouse: 0
   earnPoints: 1
   createMoveableObject: 0
@@ -286,6 +298,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 20c73d516798a2e4da65dfe704523553, type: 3}
   - {fileID: 8300000, guid: 73fddedf030d8d44cb7401857939d65e, type: 3}
   - {fileID: 8300000, guid: 2cdb105879e21bc429e735de0aa03f64, type: 3}
+  bitTheBestClip: {fileID: 8300000, guid: dbbd27645bd537448a6da7d849aaecad, type: 3}
 --- !u!4 &280931886
 Transform:
   m_ObjectHideFlags: 0
@@ -557,18 +570,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1038551301 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8048877290294341024, guid: c5b435fb1073a864ca9a3c6be03feee4,
-    type: 3}
-  m_PrefabInstance: {fileID: 8048877289700910245}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1407395312
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScore: {fileID: 502010399}
-  bestScore: {fileID: 1038551301}
+  bestScoreText: {fileID: 25495138}
 --- !u!4 &1407395314
 Transform:
   m_ObjectHideFlags: 0

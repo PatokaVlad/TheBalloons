@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIHandler : MonoBehaviour
 {
+    private SoundHandler _soundHandler;
+
     [SerializeField]
     private Text currentScore;
     [SerializeField]
-    private Text bestScore;
+    private Text bestScoreText;
+
+    private int bestScore;
+    private bool makeNewBest = false;
 
     private void Start()
     {
-        bestScore.text = SaveHandler.GetBestScore().ToString();
+        _soundHandler = FindObjectOfType<SoundHandler>();
+
+        bestScore = SaveHandler.GetBestScore(SceneManager.GetActiveScene().path);
+        bestScoreText.text = bestScore.ToString();
     }
 
     public void UpdatePonitsCount(int count)
@@ -24,9 +33,15 @@ public class UIHandler : MonoBehaviour
 
     private void UpdateBestScore(int count)
     {
-        if(SaveHandler.GetBestScore() < count)
+        if(bestScore < count)
         {
-            bestScore.text = count.ToString();
+            bestScoreText.text = count.ToString();
+
+            if (!makeNewBest)
+            {
+                _soundHandler.PlayClip(_soundHandler.BitTheBestClip);
+                makeNewBest = true;
+            }
         }
     }
 }
