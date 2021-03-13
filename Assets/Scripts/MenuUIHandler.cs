@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 public class MenuUIHandler : MonoBehaviour
 {
     [SerializeField]
+    private List<Button> playButtons = new List<Button>();
+
+    [SerializeField]
     private Text totalScore;
     [Header("Почерёдность как в сцен в Build Settings")]
     [SerializeField]
@@ -15,6 +18,22 @@ public class MenuUIHandler : MonoBehaviour
     private void Start()
     {
         LoadBestPoints();
+        ActivateButtons();
+    }
+
+    private void ActivateButtons()
+    {
+        for (int i = 1; i < playButtons.Count; i++)
+        {
+            int total = System.Convert.ToInt32(totalScore.text);
+            int needed = i * 200;
+            if (total < needed) 
+            {
+
+                playButtons[i].GetComponent<Button>().enabled = false;
+                bestScores[i].text = "Earn " + (needed - total).ToString() + " points!";
+            }
+        }
     }
 
     private void LoadBestPoints()
