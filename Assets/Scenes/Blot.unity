@@ -175,10 +175,12 @@ MonoBehaviour:
   - {fileID: 978279015552888136, guid: 31cf1f69f47546741bea1bf0ffa237ec, type: 3}
   childs: []
   maxOneTimeSpawnCount: 3
-  minOneTimeSpawnCount: 0
+  minOneTimeSpawnCount: 1
+  moveableObjectSortingOrder: 1
   spawnDeltaTime: 0.6
   minSpeed: 1
   maxSpeed: 5
+  maxSizeScale: 0.15
   useMouse: 0
   earnPoints: 1
   createMoveableObject: 1

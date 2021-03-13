@@ -8,6 +8,7 @@ public class Animal : MoveableObject
 
     private bool hasDirection = false;
     private bool isStoped = true;
+    private bool isDestryed = false;
 
     [SerializeField]
     private float timeToDestroy = 7f;
@@ -43,16 +44,41 @@ public class Animal : MoveableObject
                 isStoped = false;
             }
         }
+
+        TouchHandle();
+    }
+
+    private void TouchHandle()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector2 touchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            if (_collider2D == Physics2D.OverlapPoint(touchPosition))
+            {
+                if (!isDestryed)
+                {
+                    _soundHandler.PlayClip(sounds[Random.Range(0, sounds.Count)]);
+                    StartCoroutine(SmoothDestroy());
+                }
+            }
+        }
     }
 
     private IEnumerator WaitAndDestroy()
     {
         yield return new WaitForSeconds(timeToDestroy);
-        StartCoroutine(SmoothDestroy());
+
+        if (!isDestryed) 
+        {
+            StartCoroutine(SmoothDestroy());
+        }
     }
 
     private IEnumerator SmoothDestroy()
     {
+        isDestryed = true;
+
         float time = 0;
         float spriteTransparent = 1;
 

@@ -42,3 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Blots
+    uniqueID: 2556595475
+    locked: 0
+  - name: Balloons
+    uniqueID: 1838696975
+    locked: 0

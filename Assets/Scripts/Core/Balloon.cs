@@ -54,6 +54,11 @@ public class Balloon : MonoBehaviour
 
         Initialize();
 
+        float scale = _transform.localScale.x + Random.Range(-_balloonsHandler.MaxSizeScale, 
+            _balloonsHandler.MaxSizeScale);
+
+        _transform.localScale = new Vector3(scale, scale, 1f);
+
         spriteColor = _particle.startColor;
         GetComponent<ParticleSystemRenderer>().material.color = spriteColor;
 
@@ -72,6 +77,7 @@ public class Balloon : MonoBehaviour
         GameObject moveableObjectCopy = Instantiate(moveableObject, _transform.position, Quaternion.identity, _transform);
 
         moveableObjectCopy.GetComponent<MoveableObject>().enabled = false;
+        moveableObjectCopy.GetComponent<Collider2D>().enabled = false;
 
         SpriteRenderer _sprite = moveableObjectCopy.GetComponent<SpriteRenderer>();
         _sprite.sortingOrder = _spriteRenderer.sortingOrder + 1;
@@ -173,7 +179,18 @@ public class Balloon : MonoBehaviour
 
                 if (currentMoveableObject.CompareTag("Blot"))
                 {
-                    currentMoveableObject.GetComponent<SpriteRenderer>().color = spriteColor;
+                    SpriteRenderer sprite = currentMoveableObject.GetComponent<SpriteRenderer>();
+
+                    int maxOrder = 32767;
+
+                    sprite.color = spriteColor;
+
+                    if (_balloonsHandler.moveableObjectSortingOrder < maxOrder)
+                    {
+                        _balloonsHandler.moveableObjectSortingOrder += 1;
+                        sprite.sortingOrder = _balloonsHandler.moveableObjectSortingOrder;
+                    }
+                    else sprite.sortingOrder = maxOrder;
                 }
 
                 _balloonsHandler.childs.Add(currentMoveableObject);

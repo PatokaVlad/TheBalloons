@@ -173,14 +173,16 @@ MonoBehaviour:
   - {fileID: 7623556696891776305, guid: ee56fe6edc1ad9d4ca32831002e2ad05, type: 3}
   - {fileID: 6509776885432697418, guid: 07d7ab21db231954d85ed86680da6671, type: 3}
   moveableObjects: []
+  childs: []
   maxOneTimeSpawnCount: 3
-  minOneTimeSpawnCount: 0
+  minOneTimeSpawnCount: 1
   spawnDeltaTime: 0.6
   minSpeed: 1
   maxSpeed: 4
   useMouse: 0
   earnPoints: 1
   createMoveableObject: 0
+  spawnMoveableObjectOnQuit: 0
 --- !u!4 &140683709
 Transform:
   m_ObjectHideFlags: 0

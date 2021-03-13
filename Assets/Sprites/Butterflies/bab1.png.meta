@@ -240,10 +240,10 @@ TextureImporter:
       name: bab1_3
       rect:
         serializedVersion: 2
-        x: 112
-        y: 493
-        width: 91
-        height: 228
+        x: 804
+        y: 748
+        width: 125
+        height: 227
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,10 +261,10 @@ TextureImporter:
       name: bab1_4
       rect:
         serializedVersion: 2
-        x: 372
-        y: 692
-        width: 4
-        height: 4
+        x: 112
+        y: 493
+        width: 91
+        height: 228
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,10 +282,10 @@ TextureImporter:
       name: bab1_5
       rect:
         serializedVersion: 2
-        x: 596
-        y: 505
-        width: 76
-        height: 227
+        x: 372
+        y: 692
+        width: 4
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,9 +303,9 @@ TextureImporter:
       name: bab1_6
       rect:
         serializedVersion: 2
-        x: 102
-        y: 17
-        width: 125
+        x: 378
+        y: 496
+        width: 72
         height: 228
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -324,8 +324,8 @@ TextureImporter:
       name: bab1_7
       rect:
         serializedVersion: 2
-        x: 360
-        y: 239
+        x: 596
+        y: 505
         width: 76
         height: 227
       alignment: 0
@@ -345,8 +345,8 @@ TextureImporter:
       name: bab1_8
       rect:
         serializedVersion: 2
-        x: 592
-        y: 246
+        x: 828
+        y: 494
         width: 76
         height: 227
       alignment: 0
@@ -366,9 +366,9 @@ TextureImporter:
       name: bab1_9
       rect:
         serializedVersion: 2
-        x: 804
-        y: 748
-        width: 125
+        x: 124
+        y: 239
+        width: 72
         height: 227
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -387,10 +387,10 @@ TextureImporter:
       name: bab1_10
       rect:
         serializedVersion: 2
-        x: 378
-        y: 496
-        width: 72
-        height: 228
+        x: 314
+        y: 19
+        width: 158
+        height: 229
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -408,8 +408,8 @@ TextureImporter:
       name: bab1_11
       rect:
         serializedVersion: 2
-        x: 828
-        y: 494
+        x: 360
+        y: 239
         width: 76
         height: 227
       alignment: 0
@@ -429,6 +429,69 @@ TextureImporter:
       name: bab1_12
       rect:
         serializedVersion: 2
+        x: 523
+        y: 23
+        width: 191
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af53c5da72c8b1fd0800000000000000
+      internalID: -2370146676840319494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bab1_13
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 246
+        width: 76
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64e135527a398d150800000000000000
+      internalID: 5897626058136690246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bab1_14
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 23
+        width: 239
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c5be29b048885df0800000000000000
+      internalID: -191253172597115453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bab1_15
+      rect:
+        serializedVersion: 2
         x: 824
         y: 238
         width: 91
@@ -440,8 +503,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af53c5da72c8b1fd0800000000000000
-      internalID: -2370146676840319494
+      spriteID: 09ed0b7292549cba0800000000000000
+      internalID: -6068242979843154288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bab1_16
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 17
+        width: 125
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adaedbb1d501ebcb0800000000000000
+      internalID: -4846418156920640806
       vertices: []
       indices: 
       edges: []

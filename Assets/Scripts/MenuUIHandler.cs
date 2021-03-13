@@ -27,7 +27,7 @@ public class MenuUIHandler : MonoBehaviour
         {
             int total = System.Convert.ToInt32(totalScore.text);
             int needed = i * 200;
-            if (total < needed) 
+            if (total < 1) 
             {
 
                 playButtons[i].GetComponent<Button>().enabled = false;

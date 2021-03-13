@@ -166,7 +166,7 @@ MonoBehaviour:
   - {fileID: 6975488464465415720, guid: a72399e6352126342bc92b7ec75194f1, type: 3}
   childs: []
   maxOneTimeSpawnCount: 3
-  minOneTimeSpawnCount: 0
+  minOneTimeSpawnCount: 1
   spawnDeltaTime: 0.6
   minSpeed: 1
   maxSpeed: 5

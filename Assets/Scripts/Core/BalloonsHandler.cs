@@ -20,12 +20,16 @@ public class BalloonsHandler : MonoBehaviour
     private int maxOneTimeSpawnCount = 20;
     [SerializeField]
     private int minOneTimeSpawnCount = 5;
+    [HideInInspector]
+    public int moveableObjectSortingOrder = 1;
     [SerializeField]
     private float spawnDeltaTime = 0.1f;
     [SerializeField]
     private float minSpeed = 4;
     [SerializeField]
     private float maxSpeed = 7;
+    [SerializeField]
+    private float maxSizeScale = 0.15f;
     private float edgeX,
         edgeY;
 
@@ -47,6 +51,7 @@ public class BalloonsHandler : MonoBehaviour
     public float MaxSpeed { get => maxSpeed; }
     public bool EarnPoints { get => earnPoints; }
     public bool CreateMoveableObject { get => createMoveableObject; }
+    public float MaxSizeScale { get => maxSizeScale; }
 
     private void Awake()
     {;   
@@ -123,6 +128,7 @@ public class BalloonsHandler : MonoBehaviour
         {
             foreach (GameObject child in childs) 
             {
+                moveableObjectSortingOrder = 1;
                 Destroy(child);
             }
         }
