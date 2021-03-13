@@ -161,7 +161,10 @@ MonoBehaviour:
   - {fileID: 7623556696891776305, guid: ee56fe6edc1ad9d4ca32831002e2ad05, type: 3}
   - {fileID: 6509776885432697418, guid: 07d7ab21db231954d85ed86680da6671, type: 3}
   moveableObjects:
-  - {fileID: 6975488464465415720, guid: f0536219d37358445b9fba1f9f002b4e, type: 3}
+  - {fileID: 6975488464465415720, guid: 4e3fbdc9d660f8c47b89ae98583bd34f, type: 3}
+  - {fileID: 6975488464465415720, guid: 67d2c87b75fea20488ee0cf77503b224, type: 3}
+  - {fileID: 6975488464465415720, guid: a72399e6352126342bc92b7ec75194f1, type: 3}
+  childs: []
   maxOneTimeSpawnCount: 3
   minOneTimeSpawnCount: 0
   spawnDeltaTime: 0.6
@@ -170,6 +173,7 @@ MonoBehaviour:
   useMouse: 0
   earnPoints: 1
   createMoveableObject: 1
+  spawnMoveableObjectOnQuit: 0
 --- !u!4 &140683709
 Transform:
   m_ObjectHideFlags: 0

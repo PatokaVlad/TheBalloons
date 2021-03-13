@@ -13,6 +13,7 @@ public class Butterfly : MoveableObject
         int angle = Random.Range(-180, 180);
 
         direction = RotateVector(Vector2.up, angle).normalized;
+        gameObject.transform.Rotate(0, 0, angle);
 
         hasDirection = true;
     }
