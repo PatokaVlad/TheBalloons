@@ -179,8 +179,8 @@ MonoBehaviour:
   moveableObjectSortingOrder: 1
   spawnDeltaTime: 0.6
   minSpeed: 1
-  maxSpeed: 5
-  maxSizeScale: 0.15
+  maxSpeed: 2.5
+  maxSizeScale: 0
   useMouse: 0
   earnPoints: 1
   createMoveableObject: 1

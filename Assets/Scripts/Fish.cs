@@ -17,7 +17,7 @@ public class Fish : MoveableObject
 
         if (currentDirection != 1)
         {
-            FlipSprite();
+            FlipSprite(false);
         }
     }
 
@@ -35,11 +35,14 @@ public class Fish : MoveableObject
         TouchHandle();
     }
 
-    private void FlipSprite()
+    private void FlipSprite(bool playSound)
     {
         _spriteRenderer.flipX = !_spriteRenderer.flipX;
 
-        _soundHandler.PlayClip(sounds[Random.Range(0, sounds.Count)]);
+        if (playSound)
+        {
+            _soundHandler.PlayClip(sounds[Random.Range(0, sounds.Count)]);
+        }
     }
 
     private void TouchHandle()
@@ -50,7 +53,7 @@ public class Fish : MoveableObject
 
             if (_collider2D == Physics2D.OverlapPoint(touchPosition))
             {
-                FlipSprite();
+                FlipSprite(true);
                 currentDirection *= -1;
             }
         }

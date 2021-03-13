@@ -168,9 +168,11 @@ MonoBehaviour:
   childs: []
   maxOneTimeSpawnCount: 3
   minOneTimeSpawnCount: 1
+  moveableObjectSortingOrder: 1
   spawnDeltaTime: 0.6
   minSpeed: 1
-  maxSpeed: 4.5
+  maxSpeed: 2.5
+  maxSizeScale: 0
   useMouse: 0
   earnPoints: 1
   createMoveableObject: 1
