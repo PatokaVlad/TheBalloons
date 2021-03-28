@@ -6,6 +6,8 @@ public class BalloonsHandler : MonoBehaviour
 {
     [SerializeField]
     private List<GameObject> balloons = new List<GameObject>();
+    [SerializeField]
+    private List<GameObject> additionalBalloons = new List<GameObject>();
 
     [SerializeField]
     private List<GameObject> moveableObjects = new List<GameObject>();
@@ -30,6 +32,9 @@ public class BalloonsHandler : MonoBehaviour
     private float maxSpeed = 7;
     [SerializeField]
     private float maxSizeScale = 0.15f;
+    [SerializeField]
+    [Range(0, 100)]
+    private int additionalBalloonSpawnChance = 50;
     private float edgeX,
         edgeY;
 
@@ -41,6 +46,8 @@ public class BalloonsHandler : MonoBehaviour
     private bool createMoveableObject;
     [SerializeField]
     private bool spawnMoveableObjectOnQuit;
+    [SerializeField]
+    private bool useAdditionalBalloons = false;
     private bool spawn = true;
 
     public delegate void OnQuit(bool playParticle, bool playSound, bool earnPoint, bool useMoveableObject);
@@ -72,7 +79,37 @@ public class BalloonsHandler : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             Vector2 spawnPosition = new Vector2(Random.Range(-edgeX, edgeX), -edgeY - 2);
-            Instantiate(balloons[Random.Range(0, balloons.Count)], spawnPosition, Quaternion.identity);
+
+            GameObject currentBalloon = null;
+            if (!useAdditionalBalloons)
+            {
+                if (balloons.Count > 0)
+                {
+                    currentBalloon = balloons[Random.Range(0, balloons.Count)];
+                }
+            }
+            else
+            {
+                if (additionalBalloonSpawnChance > Random.Range(0, 100))
+                {
+                    if (additionalBalloons.Count > 0)
+                    {
+                        currentBalloon = additionalBalloons[Random.Range(0, additionalBalloons.Count)];
+                    }
+                }
+                else
+                {
+                    if (balloons.Count > 0)
+                    {
+                        currentBalloon = balloons[Random.Range(0, balloons.Count)];
+                    }
+                }
+            }
+
+            if (currentBalloon)
+            {
+                Instantiate(currentBalloon, spawnPosition, Quaternion.identity);
+            }
         }
     }
 
