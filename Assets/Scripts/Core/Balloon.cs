@@ -19,6 +19,9 @@ public class Balloon : MonoBehaviour
     private GameObject moveableObject;
     private GameObject moveableObjectSprite;
 
+    [SerializeField]
+    private AudioClip additionalSound;
+
     private float minSpeed;
     private float maxSpeed;
 
@@ -28,6 +31,8 @@ public class Balloon : MonoBehaviour
     private bool hideMoveableObject = true;
     [SerializeField]
     private bool isDestroyable = true;
+    [SerializeField]
+    private bool useAdditionalSound = false;
     private bool isDestroyed = false;
     private bool earnPoints;
     private bool createMoveableObject;
@@ -179,7 +184,17 @@ public class Balloon : MonoBehaviour
             {
                 if (_soundHandler != null)
                 {
-                    _soundHandler.PlayBalloonClip();
+                    if (!useAdditionalSound)
+                    {
+                        _soundHandler.PlayBalloonClip();
+                    }
+                    else
+                    {
+                        if (additionalSound)
+                        {
+                            _soundHandler.PlayClip(additionalSound);
+                        }
+                    }
                 }
             }
 
