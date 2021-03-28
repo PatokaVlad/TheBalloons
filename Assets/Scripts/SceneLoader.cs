@@ -5,10 +5,19 @@ using UnityEngine;
 
 public class SceneLoader : MonoBehaviour
 {
+    public static int lastLevelIndex = 1;
+
     public void LoadLevelScene(int index)
     {
-        if (index >= 0 && index <= SceneManager.sceneCountInBuildSettings) 
+        if (index >= 0 && index <= SceneManager.sceneCountInBuildSettings)
+        {
+            if (index != 0)
+            {
+                lastLevelIndex = index;
+            }
+
             SceneManager.LoadScene(index, LoadSceneMode.Single);
+        }
     }
 
     public void LoadNextScene()

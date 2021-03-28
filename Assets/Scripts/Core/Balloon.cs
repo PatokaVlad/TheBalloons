@@ -26,9 +26,16 @@ public class Balloon : MonoBehaviour
 
     [SerializeField]
     private bool hideMoveableObject = true;
+    [SerializeField]
+    private bool isDestroyable = true;
     private bool isDestroyed = false;
     private bool earnPoints;
     private bool createMoveableObject;
+
+    [SerializeField]
+    [Range(0, 100)]
+    private float spawnChance = 100;
+    private float currentSpawnChance;
 
 
     private void Awake()
@@ -49,7 +56,7 @@ public class Balloon : MonoBehaviour
         _transform = GetComponent<Transform>();
         _collider2D = GetComponent<Collider2D>();
         _particle = GetComponent<ParticleSystem>();
-        _childrenParticle = GetComponentsInChildren<ParticleSystem>()[1];
+        if (GetComponentsInChildren<ParticleSystem>().Length > 1) _childrenParticle = GetComponentsInChildren<ParticleSystem>()[1];
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
         Initialize();
@@ -59,16 +66,21 @@ public class Balloon : MonoBehaviour
 
         _transform.localScale = new Vector3(scale, scale, 1f);
 
-        spriteColor = _particle.startColor;
-        GetComponent<ParticleSystemRenderer>().material.color = spriteColor;
+        if (_particle) spriteColor = _particle.startColor;
+        if (GetComponent<ParticleSystemRenderer>()) GetComponent<ParticleSystemRenderer>().material.color = spriteColor;
 
         speed = Random.Range(minSpeed, maxSpeed);
 
         moveableObject = _balloonsHandler.GetRandomMoveableObject();
 
+        currentSpawnChance = Random.Range(0, 100);
+
         if (!hideMoveableObject) 
-        {
-            CreateMoveableObjectSprite();
+        {            
+            if (spawnChance > currentSpawnChance) 
+            {
+                CreateMoveableObjectSprite();
+            }
         }
     }
 
@@ -143,7 +155,10 @@ public class Balloon : MonoBehaviour
     {
         if (_collider2D == Physics2D.OverlapPoint(position))
         {
-            DestroyGameObject(playParticle, playSound, earnPoint, createMoveableObject);
+            if (isDestroyable)
+            {
+                DestroyGameObject(playParticle, playSound, earnPoint, createMoveableObject);
+            }
         }
     }
 
@@ -175,25 +190,28 @@ public class Balloon : MonoBehaviour
 
             if (useMoveableObject) 
             {
-                GameObject currentMoveableObject = Instantiate(moveableObject, _transform.position, Quaternion.identity, _balloonsHandler.transform);
-
-                if (currentMoveableObject.CompareTag("Blot"))
+                if (spawnChance > currentSpawnChance)
                 {
-                    SpriteRenderer sprite = currentMoveableObject.GetComponent<SpriteRenderer>();
+                    GameObject currentMoveableObject = Instantiate(moveableObject, _transform.position, Quaternion.identity, _balloonsHandler.transform);
 
-                    int maxOrder = 32767;
-
-                    sprite.color = spriteColor;
-
-                    if (_balloonsHandler.moveableObjectSortingOrder < maxOrder)
+                    if (currentMoveableObject.CompareTag("Blot"))
                     {
-                        _balloonsHandler.moveableObjectSortingOrder += 1;
-                        sprite.sortingOrder = _balloonsHandler.moveableObjectSortingOrder;
-                    }
-                    else sprite.sortingOrder = maxOrder;
-                }
+                        SpriteRenderer sprite = currentMoveableObject.GetComponent<SpriteRenderer>();
 
-                _balloonsHandler.childs.Add(currentMoveableObject);
+                        int maxOrder = 32767;
+
+                        sprite.color = spriteColor;
+
+                        if (_balloonsHandler.moveableObjectSortingOrder < maxOrder)
+                        {
+                            _balloonsHandler.moveableObjectSortingOrder += 1;
+                            sprite.sortingOrder = _balloonsHandler.moveableObjectSortingOrder;
+                        }
+                        else sprite.sortingOrder = maxOrder;
+                    }
+
+                    _balloonsHandler.childs.Add(currentMoveableObject);
+                }
             }
 
             if(gameObject.activeSelf)

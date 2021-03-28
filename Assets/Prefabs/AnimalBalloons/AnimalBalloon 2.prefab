@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hideMoveableObject: 0
+  spawnChance: 70
 --- !u!60 &2572266555085102421
 PolygonCollider2D:
   m_ObjectHideFlags: 0

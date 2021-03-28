@@ -118,6 +118,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         {
             if (Validate())
             {
+                startingPanel = SceneLoader.lastLevelIndex - 1;
                 Setup();
             }
             else

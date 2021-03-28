@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 public class MenuUIHandler : MonoBehaviour
 {
     [SerializeField]
+    private int neededScoreMultiplier = 200;
+
+    [SerializeField]
     private List<Button> playButtons = new List<Button>();
 
     [SerializeField]
@@ -26,8 +29,8 @@ public class MenuUIHandler : MonoBehaviour
         for (int i = 1; i < playButtons.Count; i++)
         {
             int total = System.Convert.ToInt32(totalScore.text);
-            int needed = i * 200;
-            if (total < 1) 
+            int needed = i * neededScoreMultiplier;
+            if (total < needed) 
             {
 
                 playButtons[i].GetComponent<Button>().enabled = false;

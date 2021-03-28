@@ -41,7 +41,7 @@ public class Fish : MoveableObject
 
         if (playSound)
         {
-            _soundHandler.PlayClip(sounds[Random.Range(0, sounds.Count)]);
+            if (sounds.Count > 1) _soundHandler.PlayClip(sounds[Random.Range(0, sounds.Count)]);
         }
     }
 

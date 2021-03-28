@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4431465892937015840}
   - component: {fileID: 6865631813648636288}
   - component: {fileID: -6598478138743828263}
-  - component: {fileID: 2658626771288775421}
-  - component: {fileID: 2536590534450897444}
+  - component: {fileID: -6931018388040189760}
+  - component: {fileID: 4354518850078054512}
   m_Layer: 0
-  m_Name: Butterfly 2
+  m_Name: Bat 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6975488464465415720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -60,7 +60,7 @@ Animator:
   m_GameObject: {fileID: 6975488464465415720}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2400f5cc57f3410489bd7f52c32a7873, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6c05fcb871c5bd6419add3f93b238d20, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -69,7 +69,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!212 &2658626771288775421
+--- !u!212 &-6931018388040189760
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,7 +119,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2536590534450897444
+--- !u!61 &4354518850078054512
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

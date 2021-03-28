@@ -6,6 +6,8 @@ public class Animal : MoveableObject
 {
     private Vector2 direction = new Vector2();
 
+    [SerializeField]
+    private bool stopWhenScreenEnd = true;
     private bool hasDirection = false;
     private bool isStoped = true;
     private bool isDestryed = false;
@@ -31,7 +33,7 @@ public class Animal : MoveableObject
 
         Vector2 moveVector = direction * speed * Time.deltaTime;
 
-        if (_transform.position.y > -Camera.main.orthographicSize + 1f)
+        if (_transform.position.y > (stopWhenScreenEnd ? -Camera.main.orthographicSize + 1f : -100))
         {
             moveVector += (Vector2)_transform.position;
             _transform.position = moveVector;
@@ -58,7 +60,7 @@ public class Animal : MoveableObject
             {
                 if (!isDestryed)
                 {
-                    _soundHandler.PlayClip(sounds[Random.Range(0, sounds.Count)]);
+                    if (sounds.Count > 1) _soundHandler.PlayClip(sounds[Random.Range(0, sounds.Count)]);
                     StartCoroutine(SmoothDestroy());
                 }
             }

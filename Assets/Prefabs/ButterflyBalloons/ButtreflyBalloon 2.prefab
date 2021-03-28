@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7021444479551369132}
   - component: {fileID: 2186476547534907602}
   m_Layer: 0
-  m_Name: shar2_bay
+  m_Name: ButtreflyBalloon 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hideMoveableObject: 1
+  spawnChance: 75
 --- !u!60 &-6983929093936554662
 PolygonCollider2D:
   m_ObjectHideFlags: 0
